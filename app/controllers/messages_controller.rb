@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
     # Pusher['test_channel'].trigger('my_event', {
     #   message: 'hello world'
     # })
-    Pusher.trigger 'test-channel', 'my-event', {content: @message.content, name: @message.name}
+
   end
 
   # GET /messages/1
@@ -33,6 +33,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
+        Pusher.trigger 'test-channel', 'my-event', {content: @message.content, name: @message.name}
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
         format.json { render :show, status: :created, location: @message }
       else
