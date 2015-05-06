@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'pusher'
 gem 'rails', '~> 4.2.0'
 
 gem 'sqlite3', group: :development
