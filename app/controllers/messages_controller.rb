@@ -6,6 +6,10 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @messages = Message.all
+    Pusher['test_channel'].trigger('my_event', {
+      message: 'hello world'
+    })
+
   end
 
   # GET /messages/1
