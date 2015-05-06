@@ -6,9 +6,10 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @messages = Message.all
-    Pusher['test_channel'].trigger('my_event', {
-      message: 'hello world'
-    })
+    # Pusher['test_channel'].trigger('my_event', {
+    #   message: 'hello world'
+    # })
+    Pusher.trigger 'my-channel', 'my-event', {content: @message.content, name: @message.name}
 
   end
 
