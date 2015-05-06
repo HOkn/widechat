@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
     # Pusher['test_channel'].trigger('my_event', {
     #   message: 'hello world'
     # })
-    Pusher.trigger 'my-channel', 'my-event', {content: @message.content, name: @message.name}
+    Pusher.trigger 'test-channel', 'my-event', {content: @message.content, name: @message.name}
 
   end
 
