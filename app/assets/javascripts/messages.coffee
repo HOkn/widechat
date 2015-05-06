@@ -3,6 +3,9 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
+  $('#new_message').on 'ajax:success', () ->
+    $('#message_content').val ''
+
   pusher = new Pusher('0409b5548d5062e57e49')
   channel = pusher.subscribe('test-channel')
 

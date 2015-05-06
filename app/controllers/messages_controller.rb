@@ -10,7 +10,6 @@ class MessagesController < ApplicationController
     #   message: 'hello world'
     # })
     Pusher.trigger 'test-channel', 'my-event', {content: @message.content, name: @message.name}
-
   end
 
   # GET /messages/1
